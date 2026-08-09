@@ -300,11 +300,6 @@ footer {
 
 [hidden] { display: none !important; }
 
-/* Языковые блоки переключаются атрибутом на <html>, ещё до загрузки скрипта,
-   чтобы не мелькал текст на другом языке. */
-:root[data-lang="ru"] [data-lang-block="en"],
-:root[data-lang="en"] [data-lang-block="ru"] { display: none; }
-
 @media (max-width: 560px) {
   body { font-size: 15.5px; }
   .wrap { padding: 0 15px 56px; }

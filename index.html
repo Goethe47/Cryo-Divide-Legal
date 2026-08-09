@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark" data-lang="ru">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cryo Divide — Политика конфиденциальности / Privacy Policy</title>
-<meta name="description" content="Политика конфиденциальности игры Cryo Divide: данные не собираются, реклама и аналитика отсутствуют, весь прогресс хранится только на устройстве. / Cryo Divide privacy policy: no data collected, no ads, no analytics.">
+<title>Cryo Divide — Privacy Policy</title>
+<meta name="description" content="Cryo Divide privacy policy: no data collected, no ads, no analytics, all progress stays on your device.">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#04090f">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -12,18 +12,12 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="stylesheet" href="styles.css">
 <script>
-  /* Тема и язык применяются до отрисовки, чтобы не мигало. */
+  /* Тема применяется до отрисовки, чтобы не мигало. */
   (function () {
-    var root = document.documentElement;
     try {
       var t = localStorage.getItem('cryo-theme');
       if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-      root.setAttribute('data-theme', t);
-
-      var l = localStorage.getItem('cryo-lang');
-      if (!l) l = /^ru\b/i.test(navigator.language || '') ? 'ru' : 'en';
-      root.setAttribute('data-lang', l);
-      root.setAttribute('lang', l);
+      document.documentElement.setAttribute('data-theme', t);
     } catch (e) {}
   })();
 </script>
@@ -32,265 +26,132 @@
 <div class="wrap">
 
   <div class="toolbar">
-    <div class="switch" role="group" aria-label="Тема / Theme">
-      <button type="button" data-theme-set="dark" aria-label="Тёмная тема / Dark theme">☾</button>
-      <button type="button" data-theme-set="light" aria-label="Светлая тема / Light theme">☀</button>
-    </div>
-    <div class="switch" role="group" aria-label="Язык / Language">
-      <button type="button" data-lang-set="ru">RU</button>
-      <button type="button" data-lang-set="en">EN</button>
+    <div class="switch" role="group" aria-label="Theme">
+      <button type="button" data-theme-set="dark" aria-label="Dark theme">☾</button>
+      <button type="button" data-theme-set="light" aria-label="Light theme">☀</button>
     </div>
   </div>
 
-  <!-- ═══════════════════ RUSSIAN ═══════════════════ -->
-  <div data-lang-block="ru">
-
-    <header class="hero">
-      <span class="badge"><img src="logo-mark.png" alt="">Cryo Divide · Юридические документы</span>
-      <h1>Политика <span class="accent">конфиденциальности</span></h1>
-      <p class="lede">Cryo Divide — офлайн-стратегия об автоматизированном сражении армий в ледяном мире. Игра не собирает персональные данные, не показывает рекламу и не отправляет ничего на серверы: всё, что она сохраняет, остаётся на вашем устройстве.</p>
-      <div class="meta">
-        <span>Обновлено: <b>9 августа 2026</b></span>
-        <span>Разработчик: <b>Goethe47</b></span>
-        <span>Пакет: <b>com.cryo.divide</b></span>
-      </div>
-    </header>
-
-    <div class="chips">
-      <div class="chip green"><span class="k">Сбор данных</span><span class="v">Не ведётся</span></div>
-      <div class="chip"><span class="k">Сеть</span><span class="v">Игра работает офлайн</span></div>
-      <div class="chip amber"><span class="k">Реклама и аналитика</span><span class="v">Отсутствуют</span></div>
-      <div class="chip"><span class="k">Аккаунт</span><span class="v">Не требуется</span></div>
+  <header class="hero">
+    <span class="badge"><img src="logo-mark.png" alt="">Cryo Divide · Legal</span>
+    <h1>Privacy <span class="accent">Policy</span></h1>
+    <p class="lede">Cryo Divide is an offline strategy game about automated armies clashing in a frozen world. It collects no personal data, shows no ads and sends nothing to any server — everything it saves stays on your device.</p>
+    <div class="meta">
+      <span>Updated: <b>9 August 2026</b></span>
+      <span>Developer: <b>Goethe47</b></span>
+      <span>Package: <b>com.cryo.divide</b></span>
     </div>
+  </header>
 
-    <section>
-      <h2><span class="num">01</span> Коротко о главном</h2>
-      <p>Cryo Divide не запрашивает у вас имя, почту, телефон, местоположение или любые другие персональные данные и не создаёт учётных записей. В игре нет рекламных сетей, систем аналитики, покупок внутри приложения и облачных сохранений.</p>
-      <p>Единственные данные, которые появляются в результате игры, — это ваш прогресс и настройки. Они записываются в частное хранилище приложения на вашем устройстве и никуда не передаются: у разработчика нет сервера, который мог бы их принять.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">02</span> Кто отвечает за данные</h2>
-      <p>Игру разрабатывает и издаёт <strong>Goethe47</strong> — независимый разработчик, автор этого приложения и оператор в отношении описанной здесь обработки. Связаться можно по адресу <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
-      <p>Политика распространяется на приложение <strong>Cryo Divide</strong> (<code>com.cryo.divide</code>) для Android, включая сборки, распространяемые в рамках закрытого тестирования Google Play.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">03</span> Какие данные собирает игра</h2>
-      <p><strong>Никаких.</strong> Cryo Divide не собирает и не передаёт разработчику:</p>
-      <ul>
-        <li>имя, адрес электронной почты, номер телефона и другие контактные данные;</li>
-        <li>точное или приблизительное местоположение;</li>
-        <li>контакты, сообщения, фотографии, файлы, календарь и содержимое микрофона или камеры;</li>
-        <li>рекламные идентификаторы, идентификаторы устройства и установки;</li>
-        <li>историю покупок и платёжные данные;</li>
-        <li>телеметрию игровых сессий, поведенческую статистику и отчёты о сбоях.</li>
-      </ul>
-      <p>В приложении нет встроенных SDK рекламных сетей, систем аналитики и внутриигровых покупок. Игра не обращается к сети во время работы.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">04</span> Что сохраняется на вашем устройстве</h2>
-      <p>Чтобы игра помнила ваш прогресс, она использует стандартное локальное хранилище приложения на Android. Эти записи не считаются собранными данными: они не покидают устройство. Сохраняются:</p>
-      <div class="data-table">
-        <div class="head">Что</div>
-        <div class="head">Зачем</div>
-        <div>Прогресс кампании</div>
-        <div>Открытые операции, текущая миссия, режим боя и зерно генерации кампании</div>
-        <div>Состояние обучения и интерфейса</div>
-        <div>Пройденное обучение, посещение ангара и тренировочного полигона — чтобы подсказки не повторялись</div>
-        <div>Настройки звука</div>
-        <div>Громкость музыки, интерфейса и боевых эффектов</div>
-        <div>Язык интерфейса</div>
-        <div>Выбранный язык игры</div>
-        <div>Версия формата сохранения</div>
-        <div>Корректный перенос прогресса при обновлении игры</div>
-      </div>
-      <p>Ничто из перечисленного не идентифицирует вас как личность и не привязано к аккаунту. Данные хранятся, пока установлено приложение.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">05</span> Разрешения и доступ к сети</h2>
-      <p>Cryo Divide не запрашивает разрешений Android, требующих вашего согласия: ни геолокацию, ни камеру, ни микрофон, ни доступ к файлам, контактам или уведомлениям.</p>
-      <p>Разрешение на доступ в интернет в сборке не запрашивается принудительно, и игра не выполняет сетевых запросов: весь игровой процесс, включая генерацию поля боя и работу ИИ, происходит на устройстве.</p>
-      <p class="note">Если в будущих версиях появятся сетевые функции, реклама или покупки, эта политика будет обновлена до выхода такой версии, а изменения описаны в разделе 11.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">06</span> Реклама, аналитика и покупки</h2>
-      <p>В игре нет рекламы — ни баннеров, ни видеороликов с вознаграждением. Персонализированная реклама невозможна, поскольку рекламных SDK в приложении нет.</p>
-      <p>Аналитические сервисы не подключены: разработчик не получает статистику сессий, воронок обучения или частоты запусков. Внутриигровых покупок и подписок в приложении также нет — вся игра доступна без платежей.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">07</span> Google Play и сервисы Google</h2>
-      <p>Игра распространяется через Google Play. Скачивание, установка, обновление и участие в тестировании обрабатываются Google в соответствии с <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Политикой конфиденциальности Google</a>, а не Cryo Divide. Разработчик получает от Google Play Console только сводную обезличенную статистику магазина (например, количество установок и общие показатели стабильности) и не может связать её с конкретным пользователем.</p>
-      <p>Отчёты о сбоях Android передаются в Google, только если вы сами включили эту опцию в настройках устройства или отправили отчёт вручную; игра не запрашивает и не собирает такие отчёты самостоятельно.</p>
-      <p>В разделе <strong>«Безопасность данных»</strong> в Google Play для Cryo Divide заявлено: данные не собираются и не передаются третьим лицам.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">08</span> Дети</h2>
-      <p>Игра не предназначена специально для детей младше 13 лет, но и не собирает данных ни от кого — независимо от возраста. Поскольку персональные данные не собираются и не передаются, требования COPPA, GDPR-K и политики Google Play «Дети и семьи» в части сбора данных соблюдаются автоматически.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">09</span> Как удалить свои данные</h2>
-      <p>Так как данные не покидают устройство, удалить их можно полностью и самостоятельно:</p>
-      <ul>
-        <li>удалите приложение — вместе с ним стирается всё локальное хранилище;</li>
-        <li>или откройте <strong>Настройки → Приложения → Cryo Divide → Хранилище → Очистить данные</strong>, чтобы сбросить прогресс и настройки, оставив игру установленной.</li>
-      </ul>
-      <p>Запрос на удаление разработчику не требуется: у нас нет копии этих данных.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">10</span> Ваши права</h2>
-      <p>Законодательство вашей страны — например, GDPR в ЕС, UK GDPR, CCPA/CPRA в Калифорнии или закон №152-ФЗ в России — может давать вам право на доступ к персональным данным, их исправление, удаление, ограничение обработки, перенос и на отказ от продажи или передачи данных.</p>
-      <p>Cryo Divide не собирает персональных данных, не продаёт и не передаёт их третьим лицам, поэтому реализовывать эти права в отношении разработчика, как правило, не требуется. Если у вас всё же есть вопрос или запрос, напишите на <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a> — мы ответим в течение 30 дней. Вы также вправе подать жалобу в надзорный орган по защите данных вашей страны.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">11</span> Изменения политики</h2>
-      <p>Политика может обновляться при появлении новых функций или изменении требований магазинов и законодательства. Актуальная версия всегда доступна на этой странице, а дата в шапке отражает последнее обновление. Существенные изменения — например, подключение сетевых функций — будут опубликованы здесь до выхода соответствующей версии игры.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">12</span> Контакты</h2>
-      <p>Вопросы о конфиденциальности, данных или самой игре: <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
-      <p>Разработчик: <strong>Goethe47</strong>. Приложение: <strong>Cryo Divide</strong>, <code>com.cryo.divide</code>.</p>
-    </section>
-
-    <footer>
-      <span>© 2026 Goethe47 · Cryo Divide</span>
-      <span>Обновлено 9 августа 2026</span>
-    </footer>
+  <div class="chips">
+    <div class="chip green"><span class="k">Data collection</span><span class="v">None</span></div>
+    <div class="chip"><span class="k">Network</span><span class="v">Plays fully offline</span></div>
+    <div class="chip amber"><span class="k">Ads &amp; analytics</span><span class="v">Not present</span></div>
+    <div class="chip"><span class="k">Account</span><span class="v">Not required</span></div>
   </div>
 
-  <!-- ═══════════════════ ENGLISH ═══════════════════ -->
-  <div data-lang-block="en">
+  <section>
+    <h2><span class="num">01</span> The short version</h2>
+    <p>Cryo Divide never asks for your name, email address, phone number, location or any other personal data, and it creates no user account. There are no advertising networks, no analytics services, no in-app purchases and no cloud saves.</p>
+    <p>The only data the game produces is your own progress and settings. It is written to the app's private storage on your device and is never transmitted: the developer runs no server that could receive it.</p>
+  </section>
 
-    <header class="hero">
-      <span class="badge"><img src="logo-mark.png" alt="">Cryo Divide · Legal</span>
-      <h1>Privacy <span class="accent">Policy</span></h1>
-      <p class="lede">Cryo Divide is an offline strategy game about automated armies clashing in a frozen world. It collects no personal data, shows no ads and sends nothing to any server — everything it saves stays on your device.</p>
-      <div class="meta">
-        <span>Updated: <b>9 August 2026</b></span>
-        <span>Developer: <b>Goethe47</b></span>
-        <span>Package: <b>com.cryo.divide</b></span>
-      </div>
-    </header>
+  <section>
+    <h2><span class="num">02</span> Who is responsible</h2>
+    <p>The game is developed and published by <strong>Goethe47</strong>, an independent developer and the controller for the processing described here. You can get in touch at <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
+    <p>This policy covers the <strong>Cryo Divide</strong> Android app (<code>com.cryo.divide</code>), including builds distributed through Google Play closed testing.</p>
+  </section>
 
-    <div class="chips">
-      <div class="chip green"><span class="k">Data collection</span><span class="v">None</span></div>
-      <div class="chip"><span class="k">Network</span><span class="v">Plays fully offline</span></div>
-      <div class="chip amber"><span class="k">Ads &amp; analytics</span><span class="v">Not present</span></div>
-      <div class="chip"><span class="k">Account</span><span class="v">Not required</span></div>
+  <section>
+    <h2><span class="num">03</span> What the game collects</h2>
+    <p><strong>Nothing.</strong> Cryo Divide does not collect or send the developer:</p>
+    <ul>
+      <li>your name, email address, phone number or other contact details;</li>
+      <li>precise or approximate location;</li>
+      <li>contacts, messages, photos, files, calendar, microphone or camera content;</li>
+      <li>advertising IDs, device identifiers or installation identifiers;</li>
+      <li>purchase history or payment details;</li>
+      <li>gameplay telemetry, behavioural statistics or crash reports.</li>
+    </ul>
+    <p>The app embeds no advertising, analytics or in-app purchase SDKs, and it makes no network requests while running.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span> What is stored on your device</h2>
+    <p>So the game can remember where you left off, it uses Android's standard local app storage. These entries are not collected data — they never leave your device. They are:</p>
+    <div class="data-table">
+      <div class="head">What</div>
+      <div class="head">Why</div>
+      <div>Campaign progress</div>
+      <div>Unlocked operations, current mission, battle mode and the campaign generation seed</div>
+      <div>Tutorial and interface state</div>
+      <div>Whether the tutorial, hangar and training range have been visited, so prompts are not repeated</div>
+      <div>Audio settings</div>
+      <div>Music, interface and combat volume levels</div>
+      <div>Interface language</div>
+      <div>The language you selected</div>
+      <div>Save format version</div>
+      <div>Migrating your progress correctly when the game updates</div>
     </div>
+    <p>None of this identifies you personally or is tied to an account. It is kept for as long as the app is installed.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">01</span> The short version</h2>
-      <p>Cryo Divide never asks for your name, email address, phone number, location or any other personal data, and it creates no user account. There are no advertising networks, no analytics services, no in-app purchases and no cloud saves.</p>
-      <p>The only data the game produces is your own progress and settings. It is written to the app's private storage on your device and is never transmitted: the developer runs no server that could receive it.</p>
-    </section>
+  <section>
+    <h2><span class="num">05</span> Permissions and network access</h2>
+    <p>Cryo Divide requests no Android permissions that require your consent — no location, camera, microphone, file, contact or notification access.</p>
+    <p>The build does not force the internet permission, and the game performs no network requests: all gameplay, including battlefield generation and the AI, runs on the device.</p>
+    <p class="note">If a future version introduces online features, ads or purchases, this policy will be updated before that version ships, as described in section 11.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">02</span> Who is responsible</h2>
-      <p>The game is developed and published by <strong>Goethe47</strong>, an independent developer and the controller for the processing described here. You can get in touch at <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
-      <p>This policy covers the <strong>Cryo Divide</strong> Android app (<code>com.cryo.divide</code>), including builds distributed through Google Play closed testing.</p>
-    </section>
+  <section>
+    <h2><span class="num">06</span> Ads, analytics and purchases</h2>
+    <p>There is no advertising in the game — no banners and no rewarded video. Personalised advertising is impossible here, because no ad SDK is present in the app.</p>
+    <p>No analytics service is integrated: the developer receives no session statistics, tutorial funnels or launch counts. There are no in-app purchases or subscriptions either — the whole game is available without payment.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">03</span> What the game collects</h2>
-      <p><strong>Nothing.</strong> Cryo Divide does not collect or send the developer:</p>
-      <ul>
-        <li>your name, email address, phone number or other contact details;</li>
-        <li>precise or approximate location;</li>
-        <li>contacts, messages, photos, files, calendar, microphone or camera content;</li>
-        <li>advertising IDs, device identifiers or installation identifiers;</li>
-        <li>purchase history or payment details;</li>
-        <li>gameplay telemetry, behavioural statistics or crash reports.</li>
-      </ul>
-      <p>The app embeds no advertising, analytics or in-app purchase SDKs, and it makes no network requests while running.</p>
-    </section>
+  <section>
+    <h2><span class="num">07</span> Google Play and Google services</h2>
+    <p>The game is distributed through Google Play. Downloading, installing, updating and joining a test are handled by Google under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, not by Cryo Divide. From the Play Console the developer receives only aggregated, anonymised store statistics (such as install counts and overall stability metrics) that cannot be linked to an individual user.</p>
+    <p>Android crash reports reach Google only if you enabled that option in your device settings or submitted a report yourself; the game neither requests nor collects such reports on its own.</p>
+    <p>Cryo Divide's <strong>Data safety</strong> declaration on Google Play states that no data is collected and no data is shared with third parties.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">04</span> What is stored on your device</h2>
-      <p>So the game can remember where you left off, it uses Android's standard local app storage. These entries are not collected data — they never leave your device. They are:</p>
-      <div class="data-table">
-        <div class="head">What</div>
-        <div class="head">Why</div>
-        <div>Campaign progress</div>
-        <div>Unlocked operations, current mission, battle mode and the campaign generation seed</div>
-        <div>Tutorial and interface state</div>
-        <div>Whether the tutorial, hangar and training range have been visited, so prompts are not repeated</div>
-        <div>Audio settings</div>
-        <div>Music, interface and combat volume levels</div>
-        <div>Interface language</div>
-        <div>The language you selected</div>
-        <div>Save format version</div>
-        <div>Migrating your progress correctly when the game updates</div>
-      </div>
-      <p>None of this identifies you personally or is tied to an account. It is kept for as long as the app is installed.</p>
-    </section>
+  <section>
+    <h2><span class="num">08</span> Children</h2>
+    <p>The game is not directed specifically at children under 13, and it collects no data from anyone, at any age. Because no personal data is collected or shared, the data-collection requirements of COPPA, GDPR-K and the Google Play Families policy are met by design.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">05</span> Permissions and network access</h2>
-      <p>Cryo Divide requests no Android permissions that require your consent — no location, camera, microphone, file, contact or notification access.</p>
-      <p>The build does not force the internet permission, and the game performs no network requests: all gameplay, including battlefield generation and the AI, runs on the device.</p>
-      <p class="note">If a future version introduces online features, ads or purchases, this policy will be updated before that version ships, as described in section 11.</p>
-    </section>
+  <section>
+    <h2><span class="num">09</span> Deleting your data</h2>
+    <p>Since the data never leaves your device, you can remove all of it yourself:</p>
+    <ul>
+      <li>uninstall the app — this erases its local storage entirely;</li>
+      <li>or open <strong>Settings → Apps → Cryo Divide → Storage → Clear data</strong> to reset progress and preferences while keeping the game installed.</li>
+    </ul>
+    <p>No deletion request to the developer is needed: we hold no copy of this data.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">06</span> Ads, analytics and purchases</h2>
-      <p>There is no advertising in the game — no banners and no rewarded video. Personalised advertising is impossible here, because no ad SDK is present in the app.</p>
-      <p>No analytics service is integrated: the developer receives no session statistics, tutorial funnels or launch counts. There are no in-app purchases or subscriptions either — the whole game is available without payment.</p>
-    </section>
+  <section>
+    <h2><span class="num">10</span> Your rights</h2>
+    <p>Depending on where you live, laws such as the GDPR, the UK GDPR, the CCPA/CPRA in California or Russian Federal Law No. 152-FZ may give you rights to access, correct, delete, restrict or port your personal data, and to opt out of its sale or sharing.</p>
+    <p>Cryo Divide collects no personal data and neither sells nor shares any, so there is normally nothing to exercise these rights against. If you still have a question or request, write to <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a> and we will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">07</span> Google Play and Google services</h2>
-      <p>The game is distributed through Google Play. Downloading, installing, updating and joining a test are handled by Google under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, not by Cryo Divide. From the Play Console the developer receives only aggregated, anonymised store statistics (such as install counts and overall stability metrics) that cannot be linked to an individual user.</p>
-      <p>Android crash reports reach Google only if you enabled that option in your device settings or submitted a report yourself; the game neither requests nor collects such reports on its own.</p>
-      <p>Cryo Divide's <strong>Data safety</strong> declaration on Google Play states that no data is collected and no data is shared with third parties.</p>
-    </section>
+  <section>
+    <h2><span class="num">11</span> Changes to this policy</h2>
+    <p>This policy may be updated as the game gains features or as store and legal requirements change. The current version always lives on this page, and the date in the header reflects the latest update. Material changes — such as adding online functionality — will be published here before the corresponding version of the game is released.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">08</span> Children</h2>
-      <p>The game is not directed specifically at children under 13, and it collects no data from anyone, at any age. Because no personal data is collected or shared, the data-collection requirements of COPPA, GDPR-K and the Google Play Families policy are met by design.</p>
-    </section>
+  <section>
+    <h2><span class="num">12</span> Contact</h2>
+    <p>Questions about privacy, your data or the game itself: <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
+    <p>Developer: <strong>Goethe47</strong>. App: <strong>Cryo Divide</strong>, <code>com.cryo.divide</code>.</p>
+  </section>
 
-    <section>
-      <h2><span class="num">09</span> Deleting your data</h2>
-      <p>Since the data never leaves your device, you can remove all of it yourself:</p>
-      <ul>
-        <li>uninstall the app — this erases its local storage entirely;</li>
-        <li>or open <strong>Settings → Apps → Cryo Divide → Storage → Clear data</strong> to reset progress and preferences while keeping the game installed.</li>
-      </ul>
-      <p>No deletion request to the developer is needed: we hold no copy of this data.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">10</span> Your rights</h2>
-      <p>Depending on where you live, laws such as the GDPR, the UK GDPR, the CCPA/CPRA in California or Russian Federal Law No. 152-FZ may give you rights to access, correct, delete, restrict or port your personal data, and to opt out of its sale or sharing.</p>
-      <p>Cryo Divide collects no personal data and neither sells nor shares any, so there is normally nothing to exercise these rights against. If you still have a question or request, write to <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a> and we will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">11</span> Changes to this policy</h2>
-      <p>This policy may be updated as the game gains features or as store and legal requirements change. The current version always lives on this page, and the date in the header reflects the latest update. Material changes — such as adding online functionality — will be published here before the corresponding version of the game is released.</p>
-    </section>
-
-    <section>
-      <h2><span class="num">12</span> Contact</h2>
-      <p>Questions about privacy, your data or the game itself: <a href="mailto:burteloffluther@gmail.com">burteloffluther@gmail.com</a>.</p>
-      <p>Developer: <strong>Goethe47</strong>. App: <strong>Cryo Divide</strong>, <code>com.cryo.divide</code>.</p>
-    </section>
-
-    <footer>
-      <span>© 2026 Goethe47 · Cryo Divide</span>
-      <span>Updated 9 August 2026</span>
-    </footer>
-  </div>
+  <footer>
+    <span>© 2026 Goethe47 · Cryo Divide</span>
+    <span>Updated 9 August 2026</span>
+  </footer>
 
 </div>
 
@@ -300,33 +161,18 @@
 
     function apply() {
       var theme = root.getAttribute('data-theme');
-      var lang = root.getAttribute('data-lang');
-
       document.querySelectorAll('[data-theme-set]').forEach(function (b) {
         b.setAttribute('aria-pressed', String(b.dataset.themeSet === theme));
       });
-      document.querySelectorAll('[data-lang-set]').forEach(function (b) {
-        b.setAttribute('aria-pressed', String(b.dataset.langSet === lang));
-      });
-      document.querySelectorAll('[data-lang-block]').forEach(function (b) {
-        b.hidden = b.dataset.langBlock !== lang;
-      });
-
       var meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute('content', theme === 'light' ? '#eef4f9' : '#04090f');
     }
 
     document.addEventListener('click', function (e) {
-      var t = e.target.closest('[data-theme-set], [data-lang-set]');
+      var t = e.target.closest('[data-theme-set]');
       if (!t) return;
-      if (t.dataset.themeSet) {
-        root.setAttribute('data-theme', t.dataset.themeSet);
-        try { localStorage.setItem('cryo-theme', t.dataset.themeSet); } catch (err) {}
-      } else {
-        root.setAttribute('data-lang', t.dataset.langSet);
-        root.setAttribute('lang', t.dataset.langSet);
-        try { localStorage.setItem('cryo-lang', t.dataset.langSet); } catch (err) {}
-      }
+      root.setAttribute('data-theme', t.dataset.themeSet);
+      try { localStorage.setItem('cryo-theme', t.dataset.themeSet); } catch (err) {}
       apply();
     });
 
