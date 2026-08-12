@@ -1,8 +1,11 @@
+Exit code: 0
+Wall time: 0.3 seconds
+Output:
 # Cryo Divide — Legal
 
 Публичная страница юридических документов игры **Cryo Divide** (`com.cryo.divide`, Android).
 
-Сейчас здесь опубликована политика конфиденциальности — ссылка на неё указывается в Google Play Console.
+Политика описывает LevelPlay/Unity Ads, возрастное отключение рекламного SDK, техническую диагностику Unity, локальные данные и отдельно добровольную будущую игровую аналитику.
 
 ## Страницы
 
@@ -30,3 +33,4 @@ https://goethe47.github.io/Cryo-Divide-Legal/
 ## Контакты
 
 Goethe47 — burteloffluther@gmail.com
+
