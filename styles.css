@@ -1,42 +1,35 @@
-/* Cryo Divide — Legal
-   Палитра взята из внутриигрового HUD (CryoUI): холодная синь, лёд, янтарь. */
+/* Cryo Divide — legal pages.
+   The palette is the game's own: ice paper, ink navy, and the single orange the
+   command centre uses for the active tab and the accept button (255,87,4).
+   Type is the game's type: Oswald for the condensed uppercase headings, IBM Plex
+   Sans Condensed for body copy. Both ship with the game under the OFL and are
+   served from this repository - a privacy page has no business asking a font CDN
+   for the reader's IP address. One light theme only. */
 
-:root {
-  --blue: #148cf2;
-  --cyan: #4cdbff;
-  --amber: #f58f29;
-  --green: #59f2a3;
-
-  --bg: #04090f;
-  --bg-2: #071320;
-  --surface: rgba(10, 24, 38, 0.78);
-  --surface-2: rgba(12, 30, 47, 0.6);
-  --border: rgba(76, 219, 255, 0.16);
-  --border-strong: rgba(76, 219, 255, 0.34);
-  --text: #e8f4fb;
-  --text-2: #93aec2;
-  --text-3: #63819a;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-  --grid: rgba(76, 219, 255, 0.05);
+@font-face {
+  font-family: 'Cryo Display';
+  src: url('fonts/Oswald-Variable.ttf') format('truetype-variations');
+  font-weight: 200 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cryo Body';
+  src: url('fonts/IBMPlexSansCondensed-Medium.ttf') format('truetype');
+  font-weight: 400 600;
+  font-display: swap;
 }
 
-:root[data-theme="light"] {
-  --blue: #0b63b0;
-  --cyan: #1092c2;
-  --amber: #b8600d;
-  --green: #12855a;
-
-  --bg: #eef4f9;
-  --bg-2: #ffffff;
-  --surface: rgba(255, 255, 255, 0.86);
-  --surface-2: rgba(233, 242, 249, 0.8);
-  --border: rgba(11, 62, 99, 0.14);
-  --border-strong: rgba(11, 62, 99, 0.3);
-  --text: #0a1c2b;
-  --text-2: #47637a;
-  --text-3: #6c8499;
-  --shadow: 0 20px 44px rgba(11, 40, 66, 0.14);
-  --grid: rgba(11, 62, 99, 0.05);
+:root {
+  --paper: #e9eef2;
+  --card: #ffffff;
+  --ink: #1b252e;
+  --muted: #4a5c6b;
+  --faint: #7d8c98;
+  --accent: #ff5704;
+  --line: rgba(27, 37, 46, .12);
+  --line-strong: rgba(27, 37, 46, .22);
+  --shadow: 0 1px 2px rgba(27, 37, 46, .06), 0 12px 28px rgba(27, 37, 46, .07);
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -45,269 +38,305 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.68;
-  color: var(--text);
-  background: var(--bg);
+  background: var(--paper);
+  /* The same cold horizon the menu sits on, reduced to a gradient so the page
+     stays one file and loads instantly on a phone. */
   background-image:
-    radial-gradient(900px 520px at 12% -8%, rgba(20, 140, 242, 0.20), transparent 62%),
-    radial-gradient(760px 480px at 92% 4%, rgba(76, 219, 255, 0.13), transparent 60%),
-    radial-gradient(680px 520px at 50% 108%, rgba(245, 143, 41, 0.09), transparent 64%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 58%, var(--bg) 100%);
+    radial-gradient(120% 80% at 82% -10%, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(178deg, #f4f8fa 0%, #e9eef2 42%, #dfe7ec 100%);
   background-attachment: fixed;
-  overflow-x: hidden;
-  transition: background-color .3s ease, color .3s ease;
+  color: var(--ink);
+  font: 400 17px/1.62 'Cryo Body', 'IBM Plex Sans Condensed', 'Segoe UI', system-ui, sans-serif;
 }
 
-/* Тонкая координатная сетка — отсылка к тактической карте. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 78%);
-  -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 0%, transparent 78%);
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 22px 72px;
 }
 
-.wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 20px 72px; }
+/* ── masthead ──────────────────────────────────────────────────────────── */
 
-/* ── Панель управления ─────────────────────────────────────────── */
-
-.toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 5;
+.topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  padding: 12px 0;
-  margin-bottom: 8px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 34px;
+  flex-wrap: wrap;
 }
 
-.switch { display: flex; gap: 4px; padding: 4px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); }
-
-.switch button {
-  border: 0;
-  background: transparent;
-  color: var(--text-2);
-  font: inherit;
-  font-size: .78rem;
-  letter-spacing: .06em;
-  padding: 5px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
-}
-
-.switch button:hover { color: var(--text); }
-
-.switch button[aria-pressed="true"] {
-  background: linear-gradient(180deg, var(--blue), rgba(20, 140, 242, .72));
-  color: #f2fbff;
-  box-shadow: 0 0 18px rgba(20, 140, 242, .35);
-}
-
-:root[data-theme="light"] .switch button[aria-pressed="true"] { color: #fff; }
-
-/* ── Шапка ─────────────────────────────────────────────────────── */
-
-.hero { padding: 26px 0 34px; }
-
-.badge {
+.brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 14px 6px 6px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
-  font-size: .7rem;
-  letter-spacing: .18em;
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--text-2);
+  color: var(--ink);
+  text-decoration: none;
 }
 
-.badge img { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--border-strong); }
+.brand img { width: 26px; height: 26px; display: block; }
+
+.nav { display: flex; gap: 4px; }
+
+.nav a {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.nav a:hover { color: var(--ink); background: rgba(255, 255, 255, .7); }
+
+/* The active page carries the orange underline the command centre puts under
+   the active tab - same shape, same colour, same job. */
+.nav a[aria-current='page'] { color: var(--ink); }
+.nav a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 14px; right: 14px; bottom: 2px;
+  height: 3px;
+  background: var(--accent);
+}
+
+/* ── hero ──────────────────────────────────────────────────────────────── */
+
+.hero { margin-bottom: 30px; }
+
+.kicker {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
 
 h1 {
-  margin: 22px 0 10px;
-  font-size: clamp(2rem, 6vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -.02em;
-  font-weight: 700;
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: clamp(38px, 8vw, 66px);
+  line-height: 1.02;
+  letter-spacing: .005em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
 }
 
-h1 .accent {
-  background: linear-gradient(100deg, var(--cyan), var(--blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.lede {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 0 0 22px;
 }
-
-.lede { margin: 0 0 18px; max-width: 62ch; color: var(--text-2); font-size: 1.06rem; }
 
 .meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 18px;
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
-  font-size: .74rem;
-  letter-spacing: .08em;
+  gap: 10px 28px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: var(--faint);
 }
 
-.meta b { color: var(--text-2); font-weight: 600; }
+.meta b { color: var(--ink); font-weight: 600; letter-spacing: .04em; }
 
-/* ── Сводка ────────────────────────────────────────────────────── */
+/* ── status chips ──────────────────────────────────────────────────────── */
 
-.chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); gap: 12px; margin: 30px 0 8px; }
+.chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin: 26px 0 40px;
+}
 
 .chip {
-  position: relative;
-  padding: 16px 16px 15px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-strong);
+  border-radius: 3px;
+  padding: 12px 14px;
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
-
-.chip::after {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 2px;
-  background: var(--cyan);
-  opacity: .8;
-}
-
-.chip.amber::after { background: var(--amber); }
-.chip.green::after { background: var(--green); }
 
 .chip .k {
   display: block;
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
-  font-size: .66rem;
+  font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--text-3);
-  margin-bottom: 4px;
+  color: var(--faint);
+  margin-bottom: 3px;
 }
 
-.chip .v { font-size: 1.02rem; font-weight: 600; line-height: 1.35; }
+.chip .v { display: block; font-weight: 600; font-size: 15px; }
 
-/* ── Секции ────────────────────────────────────────────────────── */
+.chip.on { border-left-color: var(--accent); }
+.chip.off { border-left-color: #2f9e6b; }
+
+/* ── sections ──────────────────────────────────────────────────────────── */
 
 section {
-  margin-top: 26px;
-  padding: 26px 26px 22px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--surface);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px 26px;
+  margin-bottom: 14px;
   box-shadow: var(--shadow);
 }
 
-section > *:last-child { margin-bottom: 0; }
-
 h2 {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
   display: flex;
   align-items: baseline;
   gap: 12px;
-  margin: 0 0 14px;
-  font-size: 1.18rem;
-  letter-spacing: -.01em;
 }
 
-h2 .num {
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
-  font-size: .72rem;
+.num {
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: .1em;
-  color: var(--cyan);
-  opacity: .85;
+  color: var(--accent);
 }
 
-p { margin: 0 0 14px; }
-
-ul { margin: 0 0 14px; padding-left: 0; list-style: none; }
-
-li { position: relative; padding-left: 22px; margin-bottom: 9px; }
-
-li::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: .72em;
-  width: 6px;
-  height: 6px;
-  border: 1px solid var(--cyan);
-  transform: rotate(45deg);
+h3 {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 26px 0 10px;
 }
 
-strong { color: var(--text); font-weight: 600; }
+section > h3:first-of-type { margin-top: 4px; }
 
-code {
-  font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
-  font-size: .86em;
-  padding: 1px 6px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface-2);
-  color: var(--cyan);
+p { margin: 0 0 12px; }
+p:last-child, ul:last-child, .data-table:last-child { margin-bottom: 0; }
+
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin-bottom: 7px; }
+
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+
+strong { font-weight: 600; }
+
+/* ── tables ────────────────────────────────────────────────────────────── */
+
+.data-table {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) 2fr;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 14px;
 }
 
-a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid var(--border-strong); transition: color .2s ease, border-color .2s ease; }
-a:hover { color: var(--amber); border-color: var(--amber); }
+.data-table > div {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.data-table > div:nth-child(odd) { border-right: 1px solid var(--line); }
+.data-table > div:nth-last-child(-n+2) { border-bottom: 0; }
+
+.data-table .head {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  background: rgba(27, 37, 46, .035);
+}
+
+/* ── licence entries ───────────────────────────────────────────────────── */
+
+.pack {
+  border-left: 3px solid var(--line-strong);
+  padding: 2px 0 2px 16px;
+  margin: 0 0 18px;
+}
+
+.pack:last-child { margin-bottom: 0; }
+
+.pack .name {
+  font-family: 'Cryo Display', 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.pack .lic {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  padding: 1px 7px;
+  margin-left: 8px;
+  vertical-align: 2px;
+}
+
+.pack .files {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 5px 0 0;
+  word-break: break-word;
+}
 
 .note {
-  margin: 16px 0 0;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 87, 4, .05);
   padding: 14px 16px;
-  border-left: 2px solid var(--amber);
-  border-radius: 0 10px 10px 0;
-  background: var(--surface-2);
-  color: var(--text-2);
-  font-size: .95rem;
+  border-radius: 0 3px 3px 0;
+  font-size: 15px;
 }
-
-.data-table { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 1px; margin: 4px 0 14px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--border); }
-.data-table > div { padding: 11px 14px; background: var(--bg-2); font-size: .93rem; }
-.data-table > div:nth-child(2n+1) { color: var(--text); font-weight: 600; }
-.data-table > div:nth-child(2n) { color: var(--text-2); }
-.data-table > .head { font-family: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace; font-size: .66rem !important; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3) !important; font-weight: 500 !important; }
 
 footer {
-  margin-top: 34px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border);
-  color: var(--text-3);
-  font-size: .88rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--faint);
 }
 
-[hidden] { display: none !important; }
-
-@media (max-width: 560px) {
-  body { font-size: 15.5px; }
-  .wrap { padding: 0 15px 56px; }
-  section { padding: 20px 18px 17px; border-radius: 15px; }
+@media (max-width: 620px) {
+  .wrap { padding: 20px 15px 56px; }
+  section { padding: 20px 17px; }
   .data-table { grid-template-columns: 1fr; }
-  .data-table > .head:nth-child(2) { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
+  .data-table > div:nth-child(odd) { border-right: 0; }
+  .data-table > div:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  h2 { font-size: 21px; }
 }
